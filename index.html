@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Tokenizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Tokenizer</h1>
+
+        <label for="mode">Choose Mode:</label>
+        <select id="mode">
+            <option value="encode">Encode (Text → Tokens)</option>
+            <option value="decode">Decode (Tokens → Text)</option>
+        </select>
+
+        <label for="inputData" id="inputLabel">Enter Text:</label>
+        <textarea id="inputData" placeholder="Enter your text here..."></textarea>
+
+        <button id="processBtn">Convert</button>
+
+        <h3>Output:</h3>
+        <div class="output" id="outputArea"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
