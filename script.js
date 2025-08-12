@@ -1,4 +1,4 @@
-// ===== Fixed Initial Vocabulary =====
+// Fixed Initial Vocabulary
 const fixedTokens = [
   '[PAD]', '[UNK]', '[CLS]', '[SEP]',
   ...'abcdefghijklmnopqrstuvwxyz'.split(''),
@@ -8,7 +8,7 @@ const fixedTokens = [
   'the', 'and', 'is', 'to', 'of', 'in', 'it'
 ];
 
-// ===== Tokenizer Data Structures =====
+// Tokenizer Data Structures
 const vocab = {};
 const reverseVocab = {};
 let nextId = 0;
@@ -20,7 +20,7 @@ for (const token of fixedTokens) {
   nextId++;
 }
 
-// ===== Load vocab from localStorage if available =====
+// Load vocab from localStorage if available
 function loadVocabFromStorage() {
   const savedVocab = localStorage.getItem('customTokenizerVocab');
   const savedReverseVocab = localStorage.getItem('customTokenizerReverseVocab');
@@ -33,14 +33,14 @@ function loadVocabFromStorage() {
   }
 }
 
-// ===== Save vocab to localStorage =====
+// Save vocab to localStorage
 function saveVocabToStorage() {
   localStorage.setItem('customTokenizerVocab', JSON.stringify(vocab));
   localStorage.setItem('customTokenizerReverseVocab', JSON.stringify(reverseVocab));
   localStorage.setItem('customTokenizerNextId', nextId.toString());
 }
 
-// ===== Simple Tokenizer =====
+// Simple Tokenizer
 function tokenize(text) {
   return text
     .trim()
@@ -48,7 +48,7 @@ function tokenize(text) {
     .filter(token => token && token.trim().length > 0);
 }
 
-// ===== Build Vocab Function =====
+// Build Vocab Function
 function buildVocab(text) {
   const tokens = tokenize(text);
 
@@ -62,13 +62,13 @@ function buildVocab(text) {
   saveVocabToStorage(); // Save after updating vocab
 }
 
-// ===== Encode Function =====
+// Encode Function
 function encode(text) {
   const tokens = tokenize(text);
   return tokens.map(token => (token in vocab ? vocab[token] : vocab['[UNK]']));
 }
 
-// ===== Decode Function =====
+// Decode Function
 function decode(tokenIds) {
   const tokens = tokenIds.map(id => reverseVocab[id] || '[UNK]');
   let text = "";
@@ -87,13 +87,13 @@ function decode(tokenIds) {
   return text;
 }
 
-// ===== UI Elements =====
+// UI Elements
 const modeSelect = document.getElementById("mode");
 const inputField = document.getElementById("inputData");
 const inputLabel = document.getElementById("inputLabel");
 const outputArea = document.getElementById("outputArea");
 
-// ===== UI Event Listeners =====
+// UI Event Listeners
 modeSelect.addEventListener("change", () => {
   if (modeSelect.value === "encode") {
     inputLabel.textContent = "Enter Text:";
