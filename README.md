@@ -37,7 +37,7 @@ No installation or server required.
 
 ### Encode Mode
 
-Encode mode screenshot = Encode (Text → Tokens).png
+Encode mode screenshot = ![Encode Mode](<Encode (Text → Tokens).png>)
 
 Input Text:  
     My self Siddhant. This is an example of Tokenization. Converting Plain Text to Tokens.
@@ -48,7 +48,7 @@ Output Tokens:
 
 ### Decode Mode
 
-Decode mode screenshot = Decode (Tokens → Text).png
+Decode mode screenshot = ![Decode Mode](<Decode (Token → Text).png>)
 
 Input Tokens:  
     21 76 7 40 41
