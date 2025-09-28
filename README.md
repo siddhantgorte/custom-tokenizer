@@ -4,6 +4,10 @@ A simple web-based custom tokenizer that learns vocabulary dynamically from inpu
 
 ---
 
+Live Link : https://custom-tokenizer-alpha.vercel.app/
+
+---
+
 ## Features
 
 - Dynamic vocabulary learning from user input  
